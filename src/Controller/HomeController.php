@@ -32,6 +32,6 @@ class HomeController extends AbstractController
      */
     public function notFound()
     {
-        return $this->render('home/404.html.twig');
+        return $this->render('bundles\TwigBundle\Exception\error404.html.twig');
     }
 }
