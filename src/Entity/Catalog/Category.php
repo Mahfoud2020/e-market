@@ -39,7 +39,7 @@ class Category
     private $parentId;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Catalog\Product", mappedBy="categories")
+     * @ORM\OneToMany(targetEntity="App\Entity\Catalog\Product", mappedBy="category")
      */
     private $products;
 
@@ -113,7 +113,7 @@ class Category
     {
         if (!$this->products->contains($product)) {
             $this->products[] = $product;
-            $product->addCategory($this);
+            $product->setCategory($this);
         }
 
         return $this;
@@ -123,7 +123,10 @@ class Category
     {
         if ($this->products->contains($product)) {
             $this->products->removeElement($product);
-            $product->removeCategory($this);
+            // set the owning side to null (unless already changed)
+            if ($product->getCategory() === $this) {
+                $product->setCategory(null);
+            }
         }
 
         return $this;

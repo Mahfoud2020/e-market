@@ -21,9 +21,10 @@ class Product
     private $id;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Catalog\Category", inversedBy="products")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Catalog\Category", inversedBy="products")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $categories;
+    private $category;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -117,28 +118,14 @@ class Product
         return $this->id;
     }
 
-    /**
-     * @return Collection|Category[]
-     */
-    public function getCategories(): Collection
+    public function getCategory(): ?Category
     {
-        return $this->categories;
+        return $this->category;
     }
 
-    public function addCategory(Category $category): self
+    public function setCategory(?Category $category): self
     {
-        if (!$this->categories->contains($category)) {
-            $this->categories[] = $category;
-        }
-
-        return $this;
-    }
-
-    public function removeCategory(Category $category): self
-    {
-        if ($this->categories->contains($category)) {
-            $this->categories->removeElement($category);
-        }
+        $this->category = $category;
 
         return $this;
     }

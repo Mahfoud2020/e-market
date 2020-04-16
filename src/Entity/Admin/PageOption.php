@@ -28,6 +28,7 @@ class PageOption
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Admin\Page", inversedBy="pageOptions")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $page;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Store;
+namespace App\Controller\Shopping;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -8,21 +8,21 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProductController extends AbstractController
 {
     /**
-     * @Route("/store/products", name="store_products")
+     * @Route("/products", name="products")
      */
     public function index()
     {
-        return $this->render('store/product/index.html.twig', [
+        return $this->render('Shopping/product/index.html.twig', [
             'controller_name' => 'CartController',
         ]);
     }
 
     /**
-     * @Route("/store/product", name="store_product")
+     * @Route("/product", name="product")
      */
     public function product()
     {
-        return $this->render('store/product/product.html.twig', [
+        return $this->render('Shopping/product/product.html.twig', [
             'controller_name' => 'CartController',
         ]);
     }
