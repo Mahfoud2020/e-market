@@ -9,7 +9,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\Store\ProductRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\Catalog\ProductRepository")
  */
 class Product
 {
@@ -104,7 +104,6 @@ class Product
 
     public function __construct()
     {
-        $this->categories = new ArrayCollection();
         $this->photos = new ArrayCollection();
         $this->specifics = new ArrayCollection();
         $this->taxes = new ArrayCollection();

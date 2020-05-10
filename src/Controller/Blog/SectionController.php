@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class SectionController extends AbstractController
 {
     /**
-     * @Route("/section", name="section")
+     * @Route("/section", name="blog_section")
      */
     public function index()
     {

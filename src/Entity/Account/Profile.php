@@ -14,6 +14,8 @@ use App\Entity\Transaction\Sale;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+// assert
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\Account\ProfileRepository")
@@ -38,25 +40,32 @@ class Profile
     private $displayName;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     private $email;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true, unique=true)
+     /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Account\User", inversedBy="profile",cascade={"persist", "remove"})
      */
-    private $phoneNumber;
+    private $userid;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true, unique=true)
      */
+     private $phoneNumber;
+
+    /**
+      * @ORM\Column(type="string", length=255, nullable=true, unique=true) 
+    */
+
     private $picture;
 
-    /**
+     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $cover;
 
+     private $cover;
+     
     /**
      * @ORM\Column(type="text", nullable=true)
      */
@@ -181,6 +190,17 @@ class Profile
         return $this;
     }
 
+    public function getUserid()
+    {
+        return $this->userid;
+    }
+
+    public function setUserid(User $user)
+    {
+        $this->userid = $user;
+        
+    }
+
     public function getPhoneNumber(): ?string
     {
         return $this->phoneNumber;
@@ -198,11 +218,10 @@ class Profile
         return $this->picture;
     }
 
-    public function setPicture(?string $picture): self
+    public function setPicture(?string $picture)
     {
         $this->picture = $picture;
 
-        return $this;
     }
 
     public function getCover(): ?string

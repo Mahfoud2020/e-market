@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class PostController extends AbstractController
 {
     /**
-     * @Route("/posts", name="posts")
+     * @Route("/posts", name="blog_posts")
      */
     public function index()
     {
@@ -18,7 +18,7 @@ class PostController extends AbstractController
     }
 
     /**
-     * @Route("/post", name="post")
+     * @Route("/post", name="blog_post")
      */
     public function post()
     {
