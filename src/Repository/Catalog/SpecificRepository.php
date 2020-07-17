@@ -47,4 +47,15 @@ class SpecificRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    // public function addRow($value): ?Specific
+    // {
+    //     return $this->createQueryBuilder('s')
+    //         ->andWhere('s.exampleField = :val')
+    //         ->setParameter('val', $value)
+    //         ->getQuery()
+    //         ->getOneOrNullResult()
+    //     ;
+    // }
+    
 }

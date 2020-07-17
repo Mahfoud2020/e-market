@@ -8,21 +8,21 @@ use Symfony\Component\Routing\Annotation\Route;
 class ProductController extends AbstractController
 {
     /**
-     * @Route("/products", name="products")
+     * @Route("/products", name="shopping_products")
      */
     public function index()
     {
-        return $this->render('Shopping/product/index.html.twig', [
+        return $this->render('shopping/product/index.html.twig', [
             'controller_name' => 'CartController',
         ]);
     }
 
     /**
-     * @Route("/product", name="product")
+     * @Route("/product", name="shopping_product")
      */
     public function product()
     {
-        return $this->render('Shopping/product/product.html.twig', [
+        return $this->render('shopping/product/product.html.twig', [
             'controller_name' => 'CartController',
         ]);
     }

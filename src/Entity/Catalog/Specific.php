@@ -17,48 +17,48 @@ class Specific
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $name;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $value;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Catalog\Product", inversedBy="specifics")
      * @ORM\JoinColumn(nullable=false)
      */
     private $product;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+     private $attrName;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $attrValue;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getAttrName(): ?string
     {
-        return $this->name;
+        return $this->attrName;
     }
 
-    public function setName(string $name): self
+    public function setAttrName(string $name)
     {
-        $this->name = $name;
+        $this->attrName = $name;
 
-        return $this;
+        //return $this;
     }
 
-    public function getValue(): ?string
+    public function getAttrValue(): ?string
     {
-        return $this->value;
+        return $this->attrValue;
     }
 
-    public function setValue(string $value): self
+    public function setAttrValue(string $value) 
     {
-        $this->value = $value;
+        $this->attrValue = $value;
 
-        return $this;
+        //return $this;
     }
 
     public function getProduct(): ?Product
@@ -66,7 +66,7 @@ class Specific
         return $this->product;
     }
 
-    public function setProduct(?Product $product): self
+    public function setProduct(?Product $product) : self
     {
         $this->product = $product;
 

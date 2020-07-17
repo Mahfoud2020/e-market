@@ -138,8 +138,8 @@ a#scrollUp i {
     border-bottom: 1px solid #f5f5f5;
     margin-left: 0;
     margin-right: 0;
-    padding-bottom: 20px;
-    padding-top: 20px;
+    padding-bottom: 20px; /* 20 px */
+    padding-top: 0px;
 }
 
 .header-middle .container .row .col-sm-4 {
@@ -267,7 +267,6 @@ a#scrollUp i {
     background-position: 130px;
 }
 
-
 /*  Dropdown menu*/
 
 .navbar-header .navbar-toggle .icon-bar {
@@ -279,6 +278,7 @@ a#scrollUp i {
     -webkit-animation: fadeInUp 400ms;
     animation: fadeInUp 400ms;
 }
+
 
 ul.sub-menu {
     position: absolute;
@@ -644,7 +644,7 @@ ul.sub-menu {
     padding-bottom: 20px;
     padding-top: 15px;
 }
-
+h2,
 .left-sidebar h2,
 .brands_products h2 {
     color: #FE980F;
@@ -673,7 +673,7 @@ h2.title:after {
 .left-sidebar h2:before {
     content: " ";
     position: absolute;
-    background: #fff;
+    background:  #efeee8;
     bottom: -6px;
     width: 130px;
     height: 30px;
@@ -695,8 +695,8 @@ h2.title:before {
 }
 
 .category-products .panel {
-    background-color: #FFFFFF;
-    border: 0px;
+    background-color: white ; 
+    border: 0 none;
     border-radius: 0px;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -704,10 +704,10 @@ h2.title:before {
 }
 
 .category-products .panel-default .panel-heading {
-    background-color: #FFFFFF;
+    background-color : #efeee8;
     border: 0 none;
     color: #FFFFFF;
-    padding: 5px 20px;
+    padding: 10px 10px; /* 5px 20px*/
 }
 
 .category-products .panel-default .panel-heading .panel-title a {
@@ -723,15 +723,15 @@ h2.title:before {
 }
 
 .category-products .badge {
-    background: none;
+    background:  #efeee8;
     border-radius: 10px;
     color: #696763;
     display: inline-block;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
-    line-height: 1;
+    line-height: 1.5;
     min-width: 10px;
-    padding: 3px 7px;
+    padding: 3px 2px;
     text-align: center;
     vertical-align: baseline;
     white-space: nowrap;

@@ -9,7 +9,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\Store\ProductRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\Catalog\ProductRepository")
  */
 class Product
 {
@@ -47,7 +47,7 @@ class Product
     private $specifics;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="text", nullable=false)
      */
     private $description;
 
@@ -102,15 +102,20 @@ class Product
      */
     private $reviews;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Attribute::class, mappedBy="product")
+     */
+    private $attributes;
+
     public function __construct()
     {
-        $this->categories = new ArrayCollection();
         $this->photos = new ArrayCollection();
         $this->specifics = new ArrayCollection();
         $this->taxes = new ArrayCollection();
         $this->shippings = new ArrayCollection();
         $this->ordoredProducts = new ArrayCollection();
         $this->reviews = new ArrayCollection();
+        $this->attributes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -188,7 +193,7 @@ class Product
     /**
      * @return Collection|Specific[]
      */
-    public function getSpecifics(): Collection
+    public function getSpecifics() : Collection
     {
         return $this->specifics;
     }
@@ -423,6 +428,37 @@ class Product
             // set the owning side to null (unless already changed)
             if ($review->getProduct() === $this) {
                 $review->setProduct(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Attribute[]
+     */
+    public function getAttributes(): Collection
+    {
+        return $this->attributes;
+    }
+
+    public function addAttribute(Attribute $attribute): self
+    {
+        if (!$this->attributes->contains($attribute)) {
+            $this->attributes[] = $attribute;
+            $attribute->setProduct($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAttribute(Attribute $attribute): self
+    {
+        if ($this->attributes->contains($attribute)) {
+            $this->attributes->removeElement($attribute);
+            // set the owning side to null (unless already changed)
+            if ($attribute->getProduct() === $this) {
+                $attribute->setProduct(null);
             }
         }
 
