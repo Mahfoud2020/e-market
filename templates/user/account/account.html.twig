@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+<<<<<<< HEAD
 {% block title %}My account{% endblock %}
 {% block body %}
     <body onload="init()">
@@ -71,6 +72,120 @@
   {
       document.getElementById("Messlink").click();
   }
+=======
+
+{% block title %}My account{% endblock %}
+
+{% block body %}
+ {%  set image = "images/profiles/" ~ profile.picture %}
+{#----------  test -----------#}
+{#<div class="account"> #}
+	<div class = "row" >
+	   <br><br>	
+        <div class="col-sm-3" style="background-color: #efeff8; "> 
+           <h2>Dashboard </h2>
+        	  {%  include 'user/navside.html.twig' %} 
+		</div><!--/col-sm-3-->
+		<div class="col-sm-9">
+		  <h2>Summary </h2>
+          <div class="summary-identity">
+            <div class="summary-body">
+             <div class = "row">
+                <div class="col-sm-2">           
+                 {%  set image = "images/profiles/" ~ profile.picture %}
+                  <img src = "{{asset(image)}}"  class = "avatar center"/>
+                  <h4 class="panel-title text-center"> {{profile.fullName}}</h4>
+                </div>
+                 <div class="col-sm-9">
+                   
+                </div>
+             </div>
+             
+             
+            </div>
+           </div>
+		  <div class="panel-group category-products" id="summary"><!--dashboard-->
+          <div class="summary-panel">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                        <a  data-toggle="collapse" onclick="hideShow" data-parent="#summary" href="#messages" class="collapsed">
+                        <span class="badge pull-right"><i class="fa fa-plus" 
+                           aria-hidden="true" ></i></span>
+						</span>Messages</span>
+                    </a>
+                </h4>
+            </div>
+            <div id="messages" class="panel-collapse collapse.show">
+                 <div class="panel-body"> 
+                   <p>sdstdsdsdsdsdsdsdsdsdsdsd</p>
+                   <p>sdsdsdsdsdsdsdsdsdsdd</p>
+                   <p>dsdsdsdsdsdsdsdsds</p>
+                   <p>rerererererererere</p>
+                 </div>
+             </div>
+          </div>
+        <div class="summary-panel">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a  aria-expanded="true" aria-controls="history" data-toggle="collapse" data-parent="#summary" href="#history"  class="collapsed">
+                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                         History
+                    </a>
+                </h4>
+            </div>
+            <div id="history" class="panel-collapse collapse.show" >
+                <div class="panel-body">
+                    <ul>
+                        <li><a href="">Per product category </a></li>
+                        <li><a href="">Per periods </a></li>
+                        <li><a href="">Per Seller </a></li>
+                        <li><a href="">Per price Interval</a></li>
+                        <li><a href="">Other </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="summary-panel">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#summary" href="#statistics" class="collapsed">
+                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                          Statistics
+                    </a>
+                </h4>
+            </div>
+            <div id="statistics" class="panel-collapse collapse.show">
+                <div class="panel-body">
+                    <ul>
+                        <li><a href="">Per Region</a></li>
+                        <li><a href="">Per product</a></li>
+                        <li><a href="">Per period</a></li>
+                        <li><a href="">per price interval</a></li>
+                        <li><a href="">Other</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="summary-panel">         
+            <div class="panel-heading">
+               <h4 class="panel-title"><a href="#">  Funds</a></h4>
+            </div>
+        </div>
+        <div class="summary-panel">
+            <div class="panel-heading">
+                <h4 class="panel-title"><a href="#">other</a></h4>
+            </div>
+        </div>
+    </div><!--/dashboard-->		  
+		</div><!--/col-sm-3-->
+
+ 	</div>	<!--/row-->				
+{# </div><!--/account --> #}
+
+
+   <script type="text/javascript">
+>>>>>>> 2506da363d933cc0e4c02d3ae1bbb06b2d45961e
   function hideShow() 
   { 
       alert("Hello! I am an alert box!");
@@ -84,6 +199,7 @@
     //document.getElementById("p2").setAttribute("aria-expanded", x);
     //document.getElementById("p2").innerHTML = "aria-expanded =" + x;
   }
+<<<<<<< HEAD
   function bgChange(){
         window.alert("Hi there...");
         var cover = document.getElementById("color-picker");
@@ -102,4 +218,7 @@
   }
 </script>  
 </body> 
+=======
+</script>   
+>>>>>>> 2506da363d933cc0e4c02d3ae1bbb06b2d45961e
 {% endblock %}

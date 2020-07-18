@@ -14,7 +14,11 @@
     <link href="{{path('home')}}css/animate.css" rel="stylesheet">
 	<link href="{{path('home')}}css/main.css" rel="stylesheet">
     <link href="{{path('home')}}css/custom.css" rel="stylesheet">
+<<<<<<< HEAD
     <link href="{{path('home')}}css/responsive.css" rel="stylesheet"> 
+=======
+	<link href="{{path('home')}}css/responsive.css" rel="stylesheet">      
+>>>>>>> 2506da363d933cc0e4c02d3ae1bbb06b2d45961e
     <link rel="shortcut icon" href="{{path('home')}}images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{path('home')}}images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{path('home')}}images/ico/apple-touch-icon-114-precomposed.png">
@@ -99,6 +103,7 @@
                               <span><img src = "{{asset(image)}}"  
                               class = "avatar-sm center"/></span></li>
                             <li class="text-center">{{profile.fullName}}</li>
+<<<<<<< HEAD
                             <li role="separator" class="divider"></li>
                             <li><a href="{{path('user_account')}}">Summary</a></li>
                             <li><a href="{{path('user_profile_edit')}}">Profile</a></li>
@@ -111,6 +116,21 @@
                            <li><a href="{{path('user_register')}}">Register</a></li>
         		        </ul>
                         </ul>
+=======
+                            <li role="separator" class="divider"></li>
+                            <li><a href="{{path('user_account')}}">Summary</a></li>
+                            <li><a href="{{path('user_profile_edit')}}">Profile</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="{{path('user_logout')}}">Logout</a></li>
+                        </ul>
+                        
+                        {% else %}
+                        <ul class="dropdown-menu">
+			               <li><a href="{{path('user_login')}}">Login</a></li>
+                           <li><a href="{{path('user_register')}}">Register</a></li>
+        		        </ul>
+                        </ul>
+>>>>>>> 2506da363d933cc0e4c02d3ae1bbb06b2d45961e
                     {% endif %}
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->

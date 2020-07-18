@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+<<<<<<< HEAD
 {% block title %}E-market Profile{% endblock %}
 {% block body %}
    <div class = "row account-row" >
@@ -7,6 +8,20 @@
 				   <hr>
 		           {%  include 'user/navside.html.twig' %}
 		        </div><!--/col-sm-3-->					 
+=======
+
+{% block title %}E-market Profile{% endblock %}
+{% block body %}
+  
+   <div class = "row">
+ 			<div class="Container">	
+			    <div class="col-sm-3">
+				   <h2>Profile details </h2>
+				   <hr>
+		           {%  include 'user/navside.html.twig' %}
+		        </div><!--/col-sm-3-->	
+				 
+>>>>>>> 2506da363d933cc0e4c02d3ae1bbb06b2d45961e
 				<div class="signup-form"><!--sign up form-->	
 		    	  {{ form_start(form) }}			
 				<div class="col-sm-3 col-sm-offset-1">			   
@@ -17,6 +32,10 @@
  					        {{ form_row(form.description,  {'label':'Description   ','attr':{'placeholder':'Give us a desciption..'}}) }}
                             {{ form_row(form.picture, {'attr':{'style':'padding-left: 0px;'}})}}   
                          	{{ form_row(form.cover, {'attr':{'style':'padding-left: 0px;'}})}}				    					    
+<<<<<<< HEAD
+=======
+				    
+>>>>>>> 2506da363d933cc0e4c02d3ae1bbb06b2d45961e
 				</div>	
 				<div class="col-sm-3 col-sm-offset-1">		    		
                           {{ form_row(form.billingAddress,  {'label':'Billing Address   ','attr':{'placeholder':'Enter the billing address..'}}) }}                                                            
@@ -30,8 +49,17 @@
 						<hr>
 				</div>
 			    {{ form_end(form) }}
+<<<<<<< HEAD
 			</div>          
 		  <hr>
+=======
+			</div>
+               				    
+                  
+				  <hr>
+				</div>
+			
+>>>>>>> 2506da363d933cc0e4c02d3ae1bbb06b2d45961e
     </div>	
 
 <script type="text/javascript">

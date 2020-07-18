@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %} User Product {% endblock %}
+<<<<<<< HEAD
 {% block body  %}
 <body onload="initBoxes()">
 <div class = "container">
@@ -232,4 +233,85 @@ function initBoxes(){
   document.getElementById("Expires").value= "";document.getElementById("Expires").style.display= "none";    
 }  
 </script>
+=======
+{% block body %}
+  
+   <div class = "row">
+ 			<div class="Container">	
+			    <div class="col-sm-3">
+				   <h2>Add product </h2>
+				   <hr>
+		           {%  include 'user/navside.html.twig' %}
+		        </div><!--/col-sm-3-->	
+				 
+				<div class="signup-form"><!--sign up form-->	
+		    	  {{ form_start(form) }}			
+				<div class="col-sm-3 col-sm-offset-1">			   
+                           	{{ form_row(form.category, {'label':'Category','attr':{'placeholder':'Choose a category...'}}) }}
+							{{ form_row(form.name, {'label':'Product Name  ','attr':{'placeholder':'Enter your product name...'}}) }}
+							{{ form_row(form.excerpt,  {'label':'Excerpt  ','attr':{'placeholder':'Give a small description..'}}) }}
+                            {{ form_row(form.description,  {'label':'Description   ','attr':{'placeholder':'Full description...'}}) }}
+ 			</div>	
+				<div class="col-sm-3 col-sm-offset-1">		    		
+        			        {{ form_row(form.quantity,  {'label':'Quantity   ','attr':{'placeholder':'Enter a quantity..'}}) }}
+                            {{ form_row(form.price, {'label':'Price','attr':{'placeholder':'Product price'}})}}   
+                         	{{ form_row(form.discount, {'label':'Discount','attr':{'placeholder':'Gice a discount..'}})}}				    					    
+							 
+						 <br>
+			            <button type="submit" class="btn btn-default" onclick = "">Save</button>
+						<hr>
+				</div>
+			    {{ form_end(form) }}
+			</div>
+               				    
+                  
+				  <hr>
+				</div>
+			
+    </div>	
+
+<script type="text/javascript">
+function hideshow(){
+	var x = document.getElementById("shipping_adr"),
+	   box = document.getElementById("same_adr");
+	
+	if (box.checked)
+	  {    // call save to modify shipping address
+		   Save();
+		   x.style.display = "none"; //"none";
+	  }
+	  else x.style.display = "block";
+}
+function Save(){
+  //var  box = document.getElementById("same_adr");
+
+  var address = document.getElementById("profile_billingAddress_address");
+  var city = document.getElementById("profile_billingAddress_city");
+  var state = document.getElementById("profile_billingAddress_state");
+  var country = document.getElementById("profile_billingAddress_country");
+  var postalCode = document.getElementById("profile_billingAddress_postalCode");
+
+// same values for shipping
+ var a = document.getElementById("profile_shippingAddress_address");
+ var c = document.getElementById("profile_shippingAddress_city");
+ var s = document.getElementById("profile_shippingAddress_state");
+ var t = document.getElementById("profile_shippingAddress_country");
+ var p = document.getElementById("profile_shippingAddress_postalCode");
+//if (box.checked)
+//  { 
+    a.value = address.value;
+    c.value = city.value;
+    s.value = state.value;
+    t.value = country.value;
+    p.value = postalCode.value;
+  //}
+
+}
+</script>
+<script type="text/javascript">
+
+</script>
+
+{#{% endif %}#}
+>>>>>>> 2506da363d933cc0e4c02d3ae1bbb06b2d45961e
 {% endblock %}
